@@ -1,17 +1,18 @@
 {
-    "name": "league/:package_name",
-    "description": ":package_description",
+    "name": "paolooo/php-jwt-package",
+    "description": "PHP JWT Implementation.",
     "keywords": [
         "league",
-        ":package_name"
+        "paolooo",
+        "php-jwt-package"
     ],
-    "homepage": "https://github.com/thephpleague/:package_name",
+    "homepage": "https://github.com/paolooo/php-jwt-package",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Nino Paolo Amarillento",
+            "email": "pol@ninopaolo.com",
+            "homepage": "http://ninopaolo.com",
             "role": "Developer"
         }
     ],
