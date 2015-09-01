@@ -17,6 +17,14 @@ class SchnauzerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerSchnauzer();
+    }
+
+    /**
+     * Register schnauzer
+     */
+    public function registerSchnauzer()
+    {
         $this->app->singleton('schnauzer', function($app) {
 
             $secretKey = 'secret';

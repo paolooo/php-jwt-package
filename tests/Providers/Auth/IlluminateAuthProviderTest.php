@@ -34,7 +34,7 @@ class IlluminateAuthProviderTest extends \Paolooo\Schnauzer\Test\TestCase
     }
 
     /** @test */
-    public function should_authenticate_user_via_illuminate_auth()
+    public function should_authenticate_user_using_illuminate_auth_once()
     {
         $this->auth
             ->shouldReceive('once')

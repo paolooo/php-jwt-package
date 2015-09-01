@@ -30,7 +30,7 @@ class SentinelProviderTest extends \Paolooo\Schnauzer\Test\TestCase
     }
 
     /** @test */
-    public function should_authenticate_sentinel()
+    public function should_authenticate_credentials_using_sentinel()
     {
         $this->sentinel
             ->shouldReceive('stateless')
