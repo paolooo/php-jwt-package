@@ -36,11 +36,7 @@ class EmarrefJwtProvider implements JwtContract
     }
 
     /**
-     * Creates Token
-     *
-     * @param number $id User ID
-     *
-     * @return string Token
+     * {@inheritDoc}
      */
     public function createToken($id)
     {
@@ -60,11 +56,7 @@ class EmarrefJwtProvider implements JwtContract
     }
 
     /**
-     * Verify token
-     *
-     * @param string $token Serialized Token
-     *
-     * @return bool True if valid token. Otherwise, false.
+     * {@inheritDoc}
      */
     public function verify($token)
     {

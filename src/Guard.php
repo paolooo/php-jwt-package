@@ -22,12 +22,20 @@ abstract class Guard
      */
     protected $jwt;
 
-    public function __construct(AuthProviderContract $auth, JwtProviderContract $jwt)
-    {
+    /**
+     * @param string $secret Secret Key
+     * @param Paolooo\Schnauzer\Contracts\Providers\Auth   $auth
+     * @param Paolooo\Schnauzer\Contracts\Providers\Jwt    $jwt
+     */
+    public function __construct(
+        $secret,
+        AuthProviderContract $auth,
+        JwtProviderContract $jwt
+    ) {
+        $this->secretKey = $secret;
+
         $this->auth = $auth;
         $this->jwt = $jwt;
-
-        $this->secretKey = 'secret';
     }
 
 }
