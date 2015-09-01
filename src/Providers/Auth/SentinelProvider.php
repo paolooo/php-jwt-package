@@ -27,4 +27,17 @@ class SentinelProvider implements Auth
     {
         return $this->sentinel->stateless($credentials);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function id()
+    {
+        if ($user = $this->sentinel->getUser()) {
+            return $user->id;
+        }
+
+        return false;
+    }
+
 }

@@ -12,4 +12,11 @@ interface Auth
      * @return bool True if valid credentias. Otherwise, false.
      */
     public function attempt(array $credentials);
+
+    /**
+     * Return current logged user id
+     *
+     * @return string User ID
+     */
+    public function id();
 }

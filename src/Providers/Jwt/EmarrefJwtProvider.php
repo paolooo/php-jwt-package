@@ -15,21 +15,11 @@ class EmarrefJwtProvider implements JwtContract
     /**
      * @var string
      */
-    private $secretKey;
-
-    /**
-     * @var string
-     */
     private $encryption;
 
-    /**
-     * @param string $secretKey Any random key. A secret key.
-     */
     public function __construct($secretKey)
     {
-        $this->secretKey = $secretKey;
-
-        $algorithm = new Hs256($this->secretKey);
+        $algorithm = new Hs256($secretKey);
         $this->encryption = Factory::create($algorithm);
 
         $this->jwt = new Jwt();
@@ -46,7 +36,8 @@ class EmarrefJwtProvider implements JwtContract
         $token->addClaim(new Claim\Audience('audience_1'));
         $token->addClaim(new Claim\Expiration(new \DateTime('30 minutes')));
         $token->addClaim(new Claim\IssuedAt(new \DateTime('now')));
-        $token->addClaim(new Claim\Issuer('your_issuer')); $token->addClaim(new Claim\JwtId('your_id'));
+        $token->addClaim(new Claim\Issuer('your_issuer'));
+        $token->addClaim(new Claim\JwtId('your_id'));
         $token->addClaim(new Claim\NotBefore(new \DateTime('now')));
         $token->addClaim(new Claim\Subject((string)$id));
 
