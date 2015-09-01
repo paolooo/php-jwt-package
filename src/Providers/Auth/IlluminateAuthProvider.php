@@ -24,4 +24,13 @@ class IlluminateAuthProvider implements Auth
     {
         return $this->auth->once($credentials);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function id()
+    {
+        return $this->auth->id();
+    }
+
 }

@@ -43,7 +43,7 @@ class SchnauzerTest extends TestCase
     /** @test */
     public function should_instantiate()
     {
-        $auth = new Schnauzer($this->secretKey, $this->auth, $this->jwt);
+        $auth = new Schnauzer($this->auth, $this->jwt);
 
         $this->assertInstanceOf('Paolooo\Schnauzer\Schnauzer', $auth);
     }
@@ -60,7 +60,7 @@ class SchnauzerTest extends TestCase
             ->shouldReceive('createToken')->once()->andReturn('sampleToken')
             ->getMock();
 
-        $auth = new Schnauzer($this->secretKey, $this->auth, $this->jwt);
+        $auth = new Schnauzer($this->auth, $this->jwt);
 
         $credentials = ['username' => 'john@doe.com', 'password' => '123'];
 
@@ -81,7 +81,7 @@ class SchnauzerTest extends TestCase
             ->shouldReceive('verifyToken')->once()->andReturn(true)
             ->getMock();
 
-        $auth = new Schnauzer($this->secretKey, $this->auth, $this->jwt);
+        $auth = new Schnauzer($this->auth, $this->jwt);
 
         $valid = $auth->verifyToken($token);
 
@@ -95,7 +95,7 @@ class SchnauzerTest extends TestCase
             ->shouldReceive('createToken')->once()->andReturn('sampleToken')
             ->getMock();
 
-        $auth = new Schnauzer($this->secretKey, $this->auth, $this->jwt);
+        $auth = new Schnauzer($this->auth, $this->jwt);
 
         $token = $auth->createToken(1);
 
